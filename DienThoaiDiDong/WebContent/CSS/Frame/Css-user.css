@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+#Login {
+	display: none;
+}
+
+#Register {
+	display: none;
+}
+
+#Logout {
+	display: inline;
+}
+
+#View-user {
+	display: inline;
+	color: red;
+}

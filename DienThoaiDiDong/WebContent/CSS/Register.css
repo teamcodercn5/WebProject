@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.register_form {
+	width: 982px;
+	height: 350px;
+	background-color: white;
+	margin: auto;
+	text-align: center;
+}
+
+.register_form table {
+	text-align: left; padding-top : 40px;
+	padding-left: 300px;
+	padding-top: 35px;
+}
+
+.slideshow{
+	display: none;
+}
