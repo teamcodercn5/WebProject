@@ -1,4 +1,4 @@
-package Servlet;
+package servlet;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -41,7 +41,7 @@ public class CheckLogin extends HttpServlet {
 			session.setAttribute("cssuser", "../CSS/Frame/Css-user.css");
 			session.setAttribute("user", user);
 		} else {
-			String sqlCommand = "select Password from account where User='"
+			String sqlCommand = "select password from account where user='"
 					+ user + "'";
 			IODatabase io = new IODatabase();
 			ResultSet rs = io.getResultSet(sqlCommand);
@@ -51,10 +51,19 @@ public class CheckLogin extends HttpServlet {
 					session.setAttribute("user", user);
 					io.closeConnection();
 				} else {
-					session.setAttribute("thongbao", "Đăng nhập thất bại.");
-					io.closeConnection();
-					response.sendRedirect("Login.jsp");
-					return;
+					sqlCommand = "select * from nhanvien where user='" + user
+							+ "'";
+					rs = io.getResultSet(sqlCommand);
+					if (rs.next() && pass.equals(rs.getString(1))) {
+						session.setAttribute("user", user);
+						session.setAttribute("checkNV", "true");
+						io.closeConnection();
+					} else {
+						session.setAttribute("thongbao", "Đăng nhập thất bại.");
+						io.closeConnection();
+						response.sendRedirect("Login.jsp");
+						return;
+					}
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

@@ -16,18 +16,15 @@ public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public void insertAccount(Account acc) {
-		String sqlCommand = "insert into Account values(?,?,?,?,?,?,?,?,?,?)";
-		int[] indexes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		String sqlCommand = "insert into account values(?,?,?,?,?,?,?,?,?,?)";
+		int[] indexes = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
 		io.executeUpdate(sqlCommand, acc.getAccount(), indexes);
 	}
 
 	@Override
 	public void updateAccount(Account acc, String user) {
-		String sqlCommand = "update Account set hoten=?,email=?,diachi=?,ngaysinh=?,sodt=? where user=?";
-		String values[] = { acc.getHoten(), acc.getEmail(), acc.getDiachi(),
-				acc.getNgaysinh(), acc.getSodt(), user };
-		int[] indexes = { 1, 2, 3, 4, 5, 6 };
-		io.executeUpdate(sqlCommand, values, indexes);
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
@@ -38,7 +35,7 @@ public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public Account getAccount(String user) {
-		String sqlCommand = "select * from Account where user='" + user + "'";
+		String sqlCommand = "select * from account where user='" + user + "'";
 		ResultSet rs = io.getResultSet(sqlCommand);
 		try {
 			if (rs.next()) {

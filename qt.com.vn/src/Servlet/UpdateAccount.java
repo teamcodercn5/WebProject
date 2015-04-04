@@ -1,4 +1,4 @@
-package Servlet;
+package servlet;
 
 import java.io.IOException;
 
@@ -39,7 +39,7 @@ public class UpdateAccount extends HttpServlet {
 		String ngaysinh = request.getParameter("ngaysinh");
 		String sodt = request.getParameter("sodt");
 		String user = (String) session.getAttribute("user");
-		String sqlCommand = "update Account set hoten=?,email=?,diachi=?,ngaysinh=?,sodt=? where user=?";
+		String sqlCommand = "update account set hoten=?,email=?,diachi=?,ngaysinh=?,sodt=? where user=?";
 		String values[] = { hoten, email, diachi, ngaysinh, sodt, user };
 		int[] indexes = { 1, 2, 3, 4, 5, 6 };
 		IODatabase io = new IODatabase();

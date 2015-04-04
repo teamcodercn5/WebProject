@@ -1,4 +1,4 @@
-package Servlet;
+package servlet;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -37,7 +37,7 @@ public class SavePasswrod extends HttpServlet {
 		HttpSession session = request.getSession();
 		String currentPass = request.getParameter("currentPass");
 		String user = (String) session.getAttribute("user");
-		String sqlCommand = "select Password from account where User='" + user
+		String sqlCommand = "select password from account where User='" + user
 				+ "'";
 		IODatabase io = new IODatabase();
 		ResultSet rs = io.getResultSet(sqlCommand);

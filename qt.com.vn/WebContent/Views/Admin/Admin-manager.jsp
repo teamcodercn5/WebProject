@@ -15,5 +15,8 @@
 </head>
 <body>
 	<h1>Giao diện quản lý Admin</h1>
+	<br>
+	<a href="List-nhan-vien.jsp">Quản lý nhân viên</a>
+	<br>
 </body>
 </html>
