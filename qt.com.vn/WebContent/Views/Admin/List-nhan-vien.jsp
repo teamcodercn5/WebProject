@@ -1,4 +1,3 @@
-
 <%
 	if (!((String) session.getAttribute("user")).equals("admin")) {
 		response.sendRedirect("../Out-server.jsp");
@@ -18,6 +17,7 @@
 <title>Quản lý nhân viên</title>
 <link rel="stylesheet" type="text/css"
 	href="../../CSS/Admin/List-nhan-vien.css" />
+<script type="text/javascript" src="../../JS/Admin/List-nhan-vien.js"></script>
 </head>
 <body>
 	<h1>Danh sách nhân viên</h1>
@@ -59,18 +59,13 @@
 				<td>${nv.email }</td>
 				<td>${nv.sodt }</td>
 				<td><input type="checkbox" value="${nv.user }" /></td>
-				<td><a href="Edit-nhan-vien">Sửa&nbsp</a></td>
+				<td><a href="Edit-nhan-vien.jsp?user=${nv.user }">Sửa</a></td>
 				<td><a
-					href="javascript:xoaNhanVien('${nv.user }','${nv.pass }','${nv.hoten }','${nv.nghiepvu }',
-				'${nv.cmnd }','${nv.mucluong }','${nv.email }','${nv.sodt }')">&nbspXóa</a></td>
+					href="javascript:xoaNhanVien('${nv.user }','${nv.hoten }','${nv.nghiepvu }',
+				'${nv.cmnd }','${nv.mucluong }','${nv.email }','${nv.sodt }')">Xóa</a></td>
 			</tr>
 		</c:forEach>
 	</table>
-	<script type="text/javascript">
-		function xoaNhanVien(user, pass, hoten, nghiepvu, cmnd, mucluong,
-				email, sodt) {
-		}
-	</script>
 	<%
 		session.setAttribute("currentUrl", request.getRequestURL()
 				.toString());

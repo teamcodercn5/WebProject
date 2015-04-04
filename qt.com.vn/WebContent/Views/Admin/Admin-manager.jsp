@@ -1,4 +1,3 @@
-
 <%
 	if (!((String) session.getAttribute("user")).equals("admin")) {
 		response.sendRedirect("../Out-server.jsp");

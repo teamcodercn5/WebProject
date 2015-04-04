@@ -28,7 +28,7 @@ public class NhanVienDAOImpl implements NhanVienDAO {
 
 	@Override
 	public void updateNhanVien(NhanVien nv, String user) {
-		String sqlCommand = "update nhanvien set user=?,pass=?,hoten=?,nghiepvu=?,cmnd=?,mucluong=?,email=?,sodt=? where user=?";
+		String sqlCommand = "update nhanvien set user=?,password=?,hoten=?,nghiepvu=?,cmnd=?,mucluong=?,email=?,sodt=? where user=?";
 		int[] indexes = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		String values[] = { nv.getUser(), nv.getPass(), nv.getHoten(),
 				nv.getNghiepvu(), nv.getCmnd(), nv.getMucluong(),
