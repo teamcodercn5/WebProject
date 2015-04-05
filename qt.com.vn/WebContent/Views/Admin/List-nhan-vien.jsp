@@ -1,3 +1,4 @@
+
 <%
 	if (!((String) session.getAttribute("user")).equals("admin")) {
 		response.sendRedirect("../Out-server.jsp");
@@ -28,47 +29,50 @@
 		session.removeAttribute("thongbao");
 	%>
 	<br>
-	<table align="center" border="solid 1px" bordercolor="black"
-		style="border-collapse: collapse;">
-		<%
-			NhanVienDAO nvDAO = new NhanVienDAOImpl();
-			ArrayList<NhanVien> alnv = new ArrayList<NhanVien>();
-			alnv.addAll(nvDAO.getListNhanVien());
-		%>
-		<tr>
-			<td>STT</td>
-			<td>User</td>
-			<td>Pass</td>
-			<td>Họ tên</td>
-			<td>Nghiệp vụ</td>
-			<td>CMND</td>
-			<td>Mức lương</td>
-			<td>Email</td>
-			<td>Số điện thoại</td>
-			<td><input type="button" value="Select All" /></td>
-		</tr>
-		<c:forEach var="nv" items="<%=alnv%>" varStatus="i">
+	<form action="Xoa-select" method="post" id="formXoaSelect">
+		<table align="center" border="solid 1px" bordercolor="black"
+			style="border-collapse: collapse;">
+			<%
+				NhanVienDAO nvDAO = new NhanVienDAOImpl();
+				ArrayList<NhanVien> alnv = new ArrayList<NhanVien>();
+				alnv.addAll(nvDAO.getListNhanVien());
+			%>
 			<tr>
-				<td>${i.index+1 }</td>
-				<td>${nv.user }</td>
-				<td>${nv.pass }</td>
-				<td>${nv.hoten }</td>
-				<td>${nv.nghiepvu }</td>
-				<td>${nv.cmnd }</td>
-				<td>${nv.mucluong }</td>
-				<td>${nv.email }</td>
-				<td>${nv.sodt }</td>
-				<td><input type="checkbox" value="${nv.user }" /></td>
-				<td><a href="Edit-nhan-vien.jsp?user=${nv.user }">Sửa</a></td>
-				<td><a
-					href="javascript:xoaNhanVien('${nv.user }','${nv.hoten }','${nv.nghiepvu }',
-				'${nv.cmnd }','${nv.mucluong }','${nv.email }','${nv.sodt }')">Xóa</a></td>
+				<td>STT</td>
+				<td>User</td>
+				<td>Pass</td>
+				<td>Họ tên</td>
+				<td>Nghiệp vụ</td>
+				<td>CMND</td>
+				<td>Mức lương</td>
+				<td>Email</td>
+				<td>Số điện thoại</td>
+				<td><input type="button" value="Select All" id="selectAll"/></td>
 			</tr>
-		</c:forEach>
-	</table>
-	<%
-		session.setAttribute("currentUrl", request.getRequestURL()
-				.toString());
-	%>
+			<c:forEach var="nv" items="<%=alnv%>" varStatus="i">
+				<tr>
+					<td>${i.index+1 }</td>
+					<td>${nv.user }</td>
+					<td>${nv.pass }</td>
+					<td>${nv.hoten }</td>
+					<td>${nv.nghiepvu }</td>
+					<td>${nv.cmnd }</td>
+					<td>${nv.mucluong }</td>
+					<td>${nv.email }</td>
+					<td>${nv.sodt }</td>
+					<td><input type="checkbox" value="${nv.user }" name="select"/></td>
+					<td><a href="Edit-nhan-vien.jsp?user=${nv.user }">Sửa</a></td>
+					<td><a
+						href="javascript:xoaNhanVien('${nv.user }','${nv.hoten }','${nv.nghiepvu }',
+				'${nv.cmnd }','${nv.mucluong }','${nv.email }','${nv.sodt }')">Xóa</a></td>
+				</tr>
+			</c:forEach>
+		</table>
+		<br> <input type="button" value="Xóa những nhân viên đã chọn." id="btnXoaSelect"/>
+	</form>
+	<script type="text/javascript">clickButton()</script>
+	<br>
+	<br>
+	<a href="../Login/Logout">Đăng xuất</a>
 </body>
 </html>

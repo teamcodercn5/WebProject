@@ -1,3 +1,4 @@
+
 <%
 	if (!((String) session.getAttribute("user")).equals("admin")) {
 		response.sendRedirect("../Out-server.jsp");
@@ -10,14 +11,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Thêm nhân viên mới</title>
+<style type="text/css">
+a {
+	text-decoration: none;
+}
+
+body {
+	text-align: center;
+}
+</style>
 </head>
 <body>
 	<h1>Thêm nhân viên mới</h1>
-	<br>
-	${sessionScope.thongbao }
-	<%session.removeAttribute("thongbao"); %>
+	<br> ${sessionScope.thongbao }
+	<%
+		session.removeAttribute("thongbao");
+	%>
 	<form action="New-nhan-vien" method="post" id="formNewNV">
-		<table>
+		<table align="center" border="1px solid" bordercolor="black"
+			style="border-collapse: collapse;">
 			<tr>
 				<td>User:</td>
 				<td><input type="text" value="" name="user" /></td>
@@ -56,9 +68,8 @@
 			onclick="form.action='List-nhan-vien.jsp',method='post'" />
 	</form>
 	<script type="text/javascript" src="../../JS/Admin/New-nhan-vien.js"></script>
-	<%
-		session.setAttribute("currentUrl", request.getRequestURL()
-				.toString());
-	%>
+	<br>
+	<br>
+	<a href="../Login/Logout">Đăng xuất</a>
 </body>
 </html>

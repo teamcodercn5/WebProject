@@ -1,3 +1,4 @@
+
 <%
 	if (!((String) session.getAttribute("user")).equals("admin")) {
 		response.sendRedirect("../Out-server.jsp");
@@ -13,15 +14,22 @@
 	type="image/x-icon" />
 <link rel="icon" href="../../Images/Frame/Icon.png" type="image/x-icon" />
 <title>Trang quản lý của Admin</title>
+<style type="text/css">
+body {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+</style>
 </head>
 <body>
 	<h1>Giao diện quản lý Admin</h1>
 	<br>
 	<a href="List-nhan-vien.jsp">Quản lý nhân viên</a>
 	<br>
-	<%
-		session.setAttribute("currentUrl", request.getRequestURL()
-				.toString());
-	%>
+	<br>
+	<a href="../Login/Logout">Đăng xuất</a>
 </body>
 </html>

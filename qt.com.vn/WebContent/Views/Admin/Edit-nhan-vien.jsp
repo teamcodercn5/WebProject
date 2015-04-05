@@ -1,3 +1,4 @@
+
 <%
 	if (!((String) session.getAttribute("user")).equals("admin")) {
 		response.sendRedirect("../Out-server.jsp");
@@ -13,6 +14,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Sửa nhân viên</title>
+<style type="text/css">
+a {
+	text-decoration: none;
+}
+
+body {
+	text-align: center;
+}
+</style>
 </head>
 <body style="text-align: center;">
 	<h1>Giao diện sửa nhân viên</h1>
@@ -65,5 +75,8 @@
 			onclick="form.action='List-nhan-vien.jsp',method='post'" />
 	</form>
 	<script type="text/javascript" src="../../JS/Admin/Edit-nhan-vien.js"></script>
+	<br>
+	<br>
+	<a href="../Login/Logout">Đăng xuất</a>
 </body>
 </html>

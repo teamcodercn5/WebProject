@@ -9,7 +9,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Trang nhập liệu tin tức</title>
+<link rel="stylesheet" href="../../CSS/NhanVien/Nhan-vien.css" type="text/css"/>
 </head>
 <body>
 <form action="" method="get">
@@ -30,5 +31,8 @@
 				type="submit" value="Quay lại" name="quaylai">
 		</div>
 	</form>
+	<br>
+	<br>
+	<a href="../Login/Logout">Đăng xuất</a>
 </body>
 </html>
