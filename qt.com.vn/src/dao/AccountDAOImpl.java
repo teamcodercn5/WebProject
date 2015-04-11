@@ -23,14 +23,15 @@ public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public void updateAccount(Account acc, String user) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void deleteAccount(String user) {
-		// TODO Auto-generated method stub
-
+		String sqlCommand = "delete account where user=?";
+		String values[] = { user };
+		int[] indexes = { 1 };
+		io.executeUpdate(sqlCommand, values, indexes);
 	}
 
 	@Override

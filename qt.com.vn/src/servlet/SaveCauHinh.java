@@ -9,21 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.SanPham;
-import dao.SanPhamDAO;
-import dao.SanPhamDAOImpl;
+import model.CauHinh;
+import dao.CauHinhDAO;
+import dao.CauHinhDAOImpl;
 
 /**
- * Servlet implementation class EditSanPham
+ * Servlet implementation class SaveCauHinh
  */
-@WebServlet("/Views/NhanVien/Edit-san-pham")
-public class EditSanPham extends HttpServlet {
+@WebServlet("/Save-cau-hinh")
+public class SaveCauHinh extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public EditSanPham() {
+	public SaveCauHinh() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -34,15 +34,21 @@ public class EditSanPham extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		SanPhamDAO spDAO = new SanPhamDAOImpl();
-		String masp = request.getParameter("masp");
-		String values[] = request.getParameterValues("sp");
-		SanPham sp = new SanPham(masp, values[0], values[1], values[2],
-				values[3], values[4]);
-		spDAO.updateSanPham(sp, masp);
-		spDAO.closeConnection();
 		HttpSession session = request.getSession();
-		session.setAttribute("thongbao", "Cập nhật thành công");
+		String values[] = request.getParameterValues("ch");
+		CauHinhDAO chDAO = new CauHinhDAOImpl();
+		if (chDAO.getCauHinh(values[0]) != null) {
+			session.setAttribute("thongbao", "Mã sản phẩm bị trùng");
+			chDAO.closeConnection();
+			response.sendRedirect("Nhan-vien.jsp");
+			return;
+		}
+		CauHinh ch = new CauHinh(values[0], values[1], values[2], values[3],
+				values[4], values[5], values[6], values[7], values[8],
+				values[9]);
+		chDAO.insertCauHinh(ch);
+		chDAO.closeConnection();
+		session.setAttribute("thongbao", "Thêm thành công");
 		response.sendRedirect("Nhan-vien.jsp");
 	}
 }

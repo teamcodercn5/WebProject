@@ -35,6 +35,6 @@ public class XoaSanPham extends HttpServlet {
 		session.setAttribute("thongbao", "Xóa thành công");
 		SanPhamDAO spDAO = new SanPhamDAOImpl();
 		spDAO.deleteSanPham(request.getParameter("masp"));
-		response.sendRedirect("List-san-pham.jsp");
+		response.sendRedirect("Nhan-vien.jsp");
 	}
 }

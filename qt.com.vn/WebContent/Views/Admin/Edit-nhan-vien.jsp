@@ -72,7 +72,7 @@ body {
 		</table>
 		<br> <input type="button" value="Lưu" id="save" /> <input
 			type="submit" value="Hủy bỏ"
-			onclick="form.action='List-nhan-vien.jsp',method='post'" />
+			onclick="form.action='Nhan-vien.jsp',method='post'" />
 	</form>
 	<script type="text/javascript" src="../../JS/Admin/Edit-nhan-vien.js"></script>
 	<br>

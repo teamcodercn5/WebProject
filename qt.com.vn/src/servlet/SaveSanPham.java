@@ -17,13 +17,13 @@ import dao.SanPhamDAOImpl;
  * Servlet implementation class NhapLieuSanPham
  */
 @WebServlet("/Views/NhanVien/Save-san-pham")
-public class NhapLieuSanPham extends HttpServlet {
+public class SaveSanPham extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NhapLieuSanPham() {
+    public SaveSanPham() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,13 +38,13 @@ public class NhapLieuSanPham extends HttpServlet {
 		if(spDAO.getSanPham(values[0])!=null){
 			session.setAttribute("thongbao", "Mã sản phẩm bị trùng");
 			spDAO.closeConnection();
-			response.sendRedirect("Nhap-lieu-san-pham.jsp");
+			response.sendRedirect("Nhan-vien.jsp");
 			return;
 		}
 		SanPham sp = new SanPham(values[0],values[1],values[2],values[3],values[4],values[5]);
 		spDAO.insertSanPham(sp);
 		spDAO.closeConnection();
 		session.setAttribute("thongbao", "Thêm thành công");
-		response.sendRedirect("List-san-pham.jsp");
+		response.sendRedirect("Nhan-vien.jsp");
 	}
 }

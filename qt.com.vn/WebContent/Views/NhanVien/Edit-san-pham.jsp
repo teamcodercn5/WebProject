@@ -53,8 +53,8 @@
 		</table>
 		<input type="button" value="Lưu" id="save" /> <input type="submit"
 			value="Hủy bỏ"
-			onclick="form.action='List-san-pham.jsp', method='post'" />
+			onclick="form.action='Nhan-vien.jsp', method='post'" />
 	</form>
-	<script type="text/javascript" src="../../JS/NhanVien/Edit-san-pham.js"></script>
+	<script type="text/javascript" src="../../JS/NhanVien/San-pham.js"></script>
 </body>
 </html>
