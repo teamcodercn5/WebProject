@@ -1,23 +1,23 @@
 package model;
 
 public class CauHinh {
-	private String masp, manhinh, CPU, RAM, OS, camerachinh, cameraphu, ROM,
-			SD, Pin;
+	private String masp, manhinh, cpu, ram, os, camerachinh, cameraphu, rom,
+			sd, pin;
 
-	public CauHinh(String masp, String manhinh, String cPU, String rAM,
-			String oS, String camerachinh, String cameraphu, String rOM,
-			String sD, String pin) {
+	public CauHinh(String masp, String manhinh, String cpu, String ram,
+			String os, String camerachinh, String cameraphu, String rom,
+			String sd, String pin) {
 		super();
 		this.masp = masp;
 		this.manhinh = manhinh;
-		CPU = cPU;
-		RAM = rAM;
-		OS = oS;
+		this.cpu = cpu;
+		this.ram = ram;
+		this.os = os;
 		this.camerachinh = camerachinh;
 		this.cameraphu = cameraphu;
-		ROM = rOM;
-		SD = sD;
-		Pin = pin;
+		this.rom = rom;
+		this.sd = sd;
+		this.pin = pin;
 	}
 
 	public CauHinh() {
@@ -40,28 +40,28 @@ public class CauHinh {
 		this.manhinh = manhinh;
 	}
 
-	public String getCPU() {
-		return CPU;
+	public String getCpu() {
+		return cpu;
 	}
 
-	public void setCPU(String cPU) {
-		CPU = cPU;
+	public void setCpu(String cpu) {
+		this.cpu = cpu;
 	}
 
-	public String getRAM() {
-		return RAM;
+	public String getRam() {
+		return ram;
 	}
 
-	public void setRAM(String rAM) {
-		RAM = rAM;
+	public void setRam(String ram) {
+		this.ram = ram;
 	}
 
-	public String getOS() {
-		return OS;
+	public String getOs() {
+		return os;
 	}
 
-	public void setOS(String oS) {
-		OS = oS;
+	public void setOs(String os) {
+		this.os = os;
 	}
 
 	public String getCamerachinh() {
@@ -80,27 +80,27 @@ public class CauHinh {
 		this.cameraphu = cameraphu;
 	}
 
-	public String getROM() {
-		return ROM;
+	public String getRom() {
+		return rom;
 	}
 
-	public void setROM(String rOM) {
-		ROM = rOM;
+	public void setRom(String rom) {
+		this.rom = rom;
 	}
 
-	public String getSD() {
-		return SD;
+	public String getSd() {
+		return sd;
 	}
 
-	public void setSD(String sD) {
-		SD = sD;
+	public void setSd(String sd) {
+		this.sd = sd;
 	}
 
 	public String getPin() {
-		return Pin;
+		return pin;
 	}
 
 	public void setPin(String pin) {
-		Pin = pin;
+		this.pin = pin;
 	}
 }

@@ -42,18 +42,16 @@ public class GioiThieuDAOImpl implements GioiThieuDAO {
 
 	@Override
 	public GioiThieu getGioiThieu(String masp) {
-		GioiThieu gt = new GioiThieu();
 		String sqlCommand = "select * from GioiThieu where masp='" + masp + "'";
 		ResultSet rs = io.getResultSet(sqlCommand);
 		try {
 			if (rs.next()) {
-				gt.setMasp(rs.getString(1));
-				gt.setChitiet(rs.getString(2));
+				return new GioiThieu(rs.getString(1), rs.getString(2));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return gt;
+		return null;
 	}
 
 	@Override

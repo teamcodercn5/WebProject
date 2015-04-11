@@ -23,7 +23,8 @@
 		SanPham sp = spDAO.getSanPham(request.getParameter("masp"));
 	%>
 	<br>
-	<form action="Edit-san-pham?masp=<%=sp.getMasp() %>" method="post" id="formNhapLieu">
+	<form action="Edit-san-pham?masp=<%=sp.getMasp()%>" method="post"
+		id="formNhapLieuSP">
 		<table align="center" border="1px solid" bordercolor="black"
 			style="border-collapse: collapse;">
 			<tr>
@@ -47,14 +48,14 @@
 				<td><input type="text" value="<%=sp.getPhukien()%>" name="sp" /></td>
 			</tr>
 			<tr>
-				<td>Tình trạng</td>
+				<td>Tình trạng:</td>
 				<td><input type="text" value="<%=sp.getTinhtrang()%>" name="sp" /></td>
 			</tr>
 		</table>
-		<input type="button" value="Lưu" id="save" /> <input type="submit"
-			value="Hủy bỏ"
-			onclick="form.action='Nhan-vien.jsp', method='post'" />
+		<input type="button" value="Lưu" id="saveSanPham" /> <input
+			type="submit" value="Hủy bỏ"
+			onclick="form.action='List-san-pham.jsp', method='post'" />
 	</form>
-	<script type="text/javascript" src="../../JS/NhanVien/San-pham.js"></script>
+	<script type="text/javascript" src="../../JS/NhanVien/Edit-san-pham.js"></script>
 </body>
 </html>

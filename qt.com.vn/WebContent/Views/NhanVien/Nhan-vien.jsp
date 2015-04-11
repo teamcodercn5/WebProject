@@ -30,65 +30,15 @@
 	<a href="Nhan-vien-information.jsp">Xem thông tin cá nhân và thay
 		đổi mật khẩu</a>
 	<br>
+	<a href="List-san-pham.jsp">Danh sách sản phẩm</a>
 	<br>
-	<div class="sp">
-		<form action="Save-san-pham" method="post" id="formCauHinh">
-			<table align="center" border="1px solid" bordercolor="#cec6ce"
-				style="border-collapse: collapse;">
-				<tr>
-					<td rowspan="2">STT</td>
-					<td rowspan="2">Mã SP</td>
-					<td colspan="5">Sản phẩm</td>
-					<td rowspan="2"><input type="button" value="Select All"
-						id="selectAllSP" /></td>
-					<td colspan="2" rowspan="2"></td>
-				</tr>
-				<tr>
-					<td>Tên sản phẩm</td>
-					<td>Giá bán</td>
-					<td>Bảo hành</td>
-					<td>Phụ kiện</td>
-					<td>Tình trạng</td>
-				</tr>
-				<c:forEach var="sp" items="<%=alsp%>" varStatus="i">
-					<tr>
-						<td>${i.index+1 }</td>
-						<td>${sp.masp }</td>
-						<td>${sp.tensp }</td>
-						<td>${sp.gia }</td>
-						<td>${sp.baohanh }</td>
-						<td>${sp.phukien }</td>
-						<td>${sp.tinhtrang }</td>
-						<td><input type="checkbox" value="${sp.masp }"
-							name="selectSP"/></td>
-						<td><a href="Edit-san-pham.jsp?masp=${sp.masp }">Sửa</a></td>
-						<td><a
-							href="javascript:xoaSanPham('${sp.masp }','${sp.tensp }','${sp.gia }',
-				'${sp.baohanh }','${sp.phukien }','${sp.tinhtrang }')">Xóa</a></td>
-					</tr>
-				</c:forEach>
-				<tr>
-					<td></td>
-					<td><input type="text" name="sp" /></td>
-					<td><input type="text" name="sp" /></td>
-					<td><input type="text" name="sp" /></td>
-					<td><input type="text" name="sp" /></td>
-					<td><input type="text" name="sp" /></td>
-					<td><input type="text" name="sp" /></td>
-					<td><input type="button" value="Add" id="btnAdd" /></td>
-					<td colspan="2"></td>
-				</tr>
-			</table>
-		</form>
-		<input type="button" value="Xóa những sản phẩm đã chọn"
-			id="btnXoaSelectSP" /> <br> ${sessionScope.thongbao }
-		<%
-			session.removeAttribute("thongbao");
-		%>
-	</div>
-	<script type="text/javascript" src="../../JS/NhanVien/San-pham.js"></script>
+	<a href="List-cau-hinh.jsp">Danh sách cấu hình</a>
 	<br>
-	<a href="Nhan-vien.jsp">Quay lại</a>
+	<a href="List-gioi-thieu.jsp">Danh sách giới thiệu sản phẩm</a>
+	<br>
+	<a></a>
+	<br>
+	<a href="../Homepage.jsp">Homepage</a>
 	<br>
 	<a href="../Login/Logout">Đăng xuất</a>
 </body>

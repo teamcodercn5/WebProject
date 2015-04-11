@@ -20,9 +20,9 @@ public class CauHinhDAOImpl implements CauHinhDAO {
 	public void insertCauHinh(CauHinh ch) {
 		String sqlCommand = "insert into cauhinh values(?,?,?,?,?,?,?,?,?,?)";
 		int[] indexes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-		String[] values = { ch.getMasp(), ch.getManhinh(), ch.getCPU(),
-				ch.getRAM(), ch.getOS(), ch.getCamerachinh(),
-				ch.getCameraphu(), ch.getROM(), ch.getSD(), ch.getPin() };
+		String[] values = { ch.getMasp(), ch.getManhinh(), ch.getCpu(),
+				ch.getRam(), ch.getOs(), ch.getCamerachinh(),
+				ch.getCameraphu(), ch.getRom(), ch.getOs(), ch.getPin() };
 		io.executeUpdate(sqlCommand, values, indexes);
 	}
 
@@ -30,9 +30,9 @@ public class CauHinhDAOImpl implements CauHinhDAO {
 	public void updateCauHinh(CauHinh ch, String masp) {
 		String sqlCommand = "update cauhinh set masp=?,manhinh=?,cpu=?,RAM=?,OS=?,camerachinh=?,cameraphu=?,ROM=?,SD=?,Pin=? where masp=?";
 		int[] indexes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-		String[] values = { ch.getMasp(), ch.getManhinh(), ch.getCPU(),
-				ch.getRAM(), ch.getOS(), ch.getCamerachinh(),
-				ch.getCameraphu(), ch.getROM(), ch.getSD(), ch.getPin(), masp };
+		String[] values = { ch.getMasp(), ch.getManhinh(), ch.getCpu(),
+				ch.getRam(), ch.getOs(), ch.getCamerachinh(),
+				ch.getCameraphu(), ch.getRom(), ch.getSd(), ch.getPin(), masp };
 		io.executeUpdate(sqlCommand, values, indexes);
 	}
 
