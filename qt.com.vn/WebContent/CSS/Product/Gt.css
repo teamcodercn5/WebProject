@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+.displayCH{
+	display: none;
+}
+
+.displayGT{
+	display: block;
+}

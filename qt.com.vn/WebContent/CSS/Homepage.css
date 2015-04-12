@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+
+#divm1 {
+	background-image: url("../Images/Frame/Icon_homepage.png;");
+}
+
+#divm2 {
+	background-image: url("../Images/Frame/Icon_dien_thoai.png;");
+}
+
+#divm3 {
+	background-image: url("../Images/Frame/Icon_tablet.png;");
+}
+
+#divm4 {
+	background-image: url("../Images/Frame/Icon_tin_tuc.png;");
+}
+
+#divm5 {
+	background-image: url("../Images/Frame/Icon_bao_hanh.png;");
+}
+
+#divm6 {
+	background-image: url("../Images/Frame/Icon_ho_tro.jpg;");
+}
+
+.main {
+	width: 982px;
+	margin: auto;
+	background-color: white;
+}
+
+.main1 {
+	width: 100%;
+	height: 578px;
+}
+
+.menuMain1 {
+	width: 100%;
+	height: 30px;
+}
+
+.menuMain1 ul li {
+	display: inline;
+	font-size: 15px;
+	height: 30px;
+	padding-right: 10px;
+	line-height: 30px;
+	float: left;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-radius: 10px;
+	margin-right: 5px;
+}
+
+.btn_new {
+	border: 0px;
+	background: url(../Images/btn_new.png) no-repeat;
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin-top: 2px;
+	margin-left: 2px;
+	background: url(../Images/btn_new.png) no-repeat;
+}
+
+.btn_hot {
+	border: 0px;
+	background: url(../Images/btn_hot.png) no-repeat;
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin-top: 2px;
+	margin-left: 2px;
+}
+
+.viewAll {
+	float: right;
+}
+
+.viewAll a {
+	color: red;
+}
+
+.productMain1 {
+	float: left;
+	width: 100%;
+	background-color: white;
+	width: 100%;
+}

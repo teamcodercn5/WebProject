@@ -1,0 +1,250 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	border: none;
+}
+
+.img {
+	text-align: center;
+}
+
+ol, ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	background: #eceae6 font-size: 12px;
+	margin: 0px;
+	overflow-x: hidden;
+	width: 100%;
+	background-color: #cec6ce;
+}
+/*
+Start Div Top
+*/
+.top {
+	width: 100%;
+	height: 42px;
+	background-color: #404040;
+}
+
+.login {
+	padding-top: 13px;
+	float: right;
+	padding-right: 480px;
+	clear: both;
+	font-size: 12px;
+}
+
+.login a {
+	color: white;
+	padding-left: 15px;
+}
+
+#Logout {
+	display: none;
+}
+
+#View-user {
+	display: none;
+}
+
+.search {
+	position: absolute;
+	top: 7px;
+	right: 195px;
+	width: 262px;
+	height: 28px;
+	background: #ffffff;
+	border-radius: 5px;
+}
+
+.text_search {
+	width: 250px;
+	padding: 4px 5px 6px;
+	float: left;
+	color: #737373;
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.btn_search {
+	right: 0px;
+	position: absolute;
+	background: url(../../Images/Frame/btn_search.png) no-repeat;
+	width: 26px;
+	height: 26px;
+	border: none;
+	float: right;
+	clear: both;
+	margin: 2px 0px 0px 0px;
+}
+
+.btn_search:hover {
+	color: #000
+}
+/*
+End Div Top
+Start Div Wrapper
+*/
+.wrapper {
+	width: 982px;
+	margin: auto;
+}
+/*
+Start Div Banner
+*/
+.banner {
+	width: 100%;
+	height: 140px;
+	background: url(../../Images/Frame/banner.png) no-repeat;
+}
+/*
+End Div Banner
+Start Div Menu
+*/
+#menu {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 980px;
+	height: 80px;
+}
+
+.menu li {
+	display: inline;
+	float: left;
+	line-height: 80px;
+	position: relative;
+	margin-right: 12px;
+}
+
+.divmenu {
+	width: 80px;
+	height: 80px;
+	text-align: center;
+}
+
+.menu li:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu li:hover #submenu {
+	position: absolute;
+	z-index: 90;
+	display: block;
+}
+
+.menu li a {
+	color: white;
+}
+
+#submenu {
+	display: none;
+}
+
+#submenu li {
+	color: white;
+	border-left: 1px solid red;
+	border-bottom: 1px solid red;
+	width: 79px;
+	height: 25px;
+	line-height: 25px;
+	background-color: #404040;
+}
+
+#submenu li a:hover {
+	background-color: red;
+	color: black;
+}
+/*
+End Div Menu
+Start Div Slide Show
+*/
+.slideshow {
+	width: 100%;
+	height: 413px;
+	color: white;
+	text-align: center;
+	width: 100%;
+}
+
+.annimationSlideShow {
+	background-color: #e5e5e5;
+}
+
+#slide {
+	border: 1px solid #ff80ff;
+}
+/*
+End Div Slide Show
+Start Div Left Menu
+*/
+.leftMenu {
+	clear: both;
+	width: 220px;
+	background-color: #cec6ce;
+	display: none;
+	float: left;
+	font-style: consolas;
+}
+
+.leftM {
+	background-color: #d90000;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #c0c0c0;
+	text-align: center;
+	border: px solid #d90000;
+	border-radius: 5px;
+}
+
+.leftM2 {
+	background-color: #404040;
+	padding-top: 20px;
+	color: white;
+	font-size: 13px;
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.leftM3 {
+	background-color: #404040;
+	border: 1px solid #404040;
+	border-radius: 5px;
+}
+
+.lmenu li a {
+	color: white;
+}
+
+.lmenu li ul {
+	padding-left: 30px;
+}
+
+.lmenu li ul a {
+	color: #c0c0c0;
+}
+
+.lmenu li ul a:hover {
+	color: white;
+}
